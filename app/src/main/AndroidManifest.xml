@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.joaolfp.popularmovies">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".MoviesApplication"
         android:allowBackup="true"
@@ -12,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MoviesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
