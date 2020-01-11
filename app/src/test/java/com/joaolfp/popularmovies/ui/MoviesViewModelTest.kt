@@ -10,6 +10,7 @@ import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
 import io.reactivex.Observable
+import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.schedulers.Schedulers
 import org.junit.Before
 
@@ -29,9 +30,9 @@ class MoviesViewModelTest {
 
     @Before
     fun `before each test`() {
+        RxAndroidPlugins.setInitMainThreadSchedulerHandler { Schedulers.trampoline() }
         repository = mockk()
-        viewModel = MoviesViewModel(repository, HandleBehavior(Schedulers.trampoline()),
-            Schedulers.trampoline())
+        viewModel = MoviesViewModel(repository, HandleBehavior(Schedulers.trampoline()))
     }
 
     @Test
