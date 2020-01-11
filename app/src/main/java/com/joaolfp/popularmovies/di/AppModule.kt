@@ -3,6 +3,7 @@ package com.joaolfp.popularmovies.di
 import com.joaolfp.popularmovies.ui.MoviesViewModel
 import com.joaolfp.popularmovies.data.MoviesApi
 import com.joaolfp.popularmovies.data.mapper.MoviesMapper
+import com.joaolfp.popularmovies.data.repository.MoviesRepository
 import com.joaolfp.popularmovies.data.repository.MoviesRepositoryImpl
 import com.joaolfp.popularmovies.networking.ApiService
 import com.joaolfp.popularmovies.networking.behaviors.HandleBehavior
@@ -19,7 +20,7 @@ val appModule = Kodein.Module("AppModule") {
         ApiService.getClient(MoviesApi::class.java)
     }
 
-    bind() from provider {
+    bind<MoviesRepository>() with provider {
         MoviesRepositoryImpl(instance(), MoviesMapper())
     }
 

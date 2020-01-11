@@ -3,7 +3,7 @@ package com.joaolfp.popularmovies.ui
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.joaolfp.popularmovies.data.repository.MoviesRepositoryImpl
+import com.joaolfp.popularmovies.data.repository.MoviesRepository
 import com.joaolfp.popularmovies.networking.behaviors.HandleBehavior
 import com.joaolfp.popularmovies.networking.behaviors.SUCCESS
 import com.joaolfp.popularmovies.networking.behaviors.ViewBehavior
@@ -12,7 +12,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 
 class MoviesViewModel(
-    private val repositoryImpl: MoviesRepositoryImpl,
+    private val repository: MoviesRepository,
     private val handleBehavior: HandleBehavior<List<MoviesVO>>
 ) : ViewModel() {
 
@@ -24,7 +24,7 @@ class MoviesViewModel(
     val viewBehavior: LiveData<ViewBehavior<List<MoviesVO>>> = _viewBehavior
 
     fun fetchMovies() {
-        disposable = repositoryImpl.getMovies().compose(handleBehavior)
+        disposable = repository.getMovies().compose(handleBehavior)
             .observeOn(AndroidSchedulers.mainThread()).doAfterNext { listMovies ->
                 if (listMovies is SUCCESS)
                     movies.addAll(listMovies.result)

@@ -5,8 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.GridLayoutManager
 import com.joaolfp.popularmovies.R
 import com.joaolfp.popularmovies.networking.behaviors.INITIAL
 import com.joaolfp.popularmovies.networking.behaviors.FINISH
@@ -69,12 +68,8 @@ class MoviesActivity : AppCompatActivity(), KodeinAware {
     }
 
     private fun setupRecyclerView(moviesList: List<MoviesVO>) {
-        val layoutManager = LinearLayoutManager(
-            this,
-            RecyclerView.VERTICAL, false
-        )
 
-        listMovies.layoutManager = layoutManager
+        listMovies.layoutManager = GridLayoutManager(this, 2)
         adapter = MoviesAdapter(moviesList)
         listMovies.adapter = adapter
     }
