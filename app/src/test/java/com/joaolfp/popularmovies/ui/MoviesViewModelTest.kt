@@ -38,7 +38,7 @@ class MoviesViewModelTest {
     fun `when load movies soon transmit behavior`() {
         every { repository.getMovies() } returns Observable.just(listOf())
 
-        val observer = mockk<Observer<in ViewBehavior<List<MoviesVO>>>>()
+        val observer = mockk<Observer<ViewBehavior<List<MoviesVO>>>>()
 
         viewModel.viewBehavior.observeForever(observer)
 
