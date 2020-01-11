@@ -7,6 +7,7 @@ import com.joaolfp.popularmovies.data.repository.MoviesRepository
 import com.joaolfp.popularmovies.data.repository.MoviesRepositoryImpl
 import com.joaolfp.popularmovies.networking.ApiService
 import com.joaolfp.popularmovies.networking.behaviors.HandleBehavior
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
@@ -25,6 +26,6 @@ val appModule = Kodein.Module("AppModule") {
     }
 
     bind() from provider {
-        MoviesViewModel(instance(), HandleBehavior(Schedulers.io()))
+        MoviesViewModel(instance(), HandleBehavior(Schedulers.io()), AndroidSchedulers.mainThread())
     }
 }

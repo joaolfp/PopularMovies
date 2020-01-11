@@ -64,6 +64,7 @@ dependencies {
 
     testImplementation "junit:junit:$versions.junit"
     testImplementation "io.mockk:mockk:$versions.mockk"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
     androidTestImplementation "androidx.test.ext:junit:$versions.extJunit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoCore"
     androidTestImplementation "com.android.support.test:runner:$versions.runner"
