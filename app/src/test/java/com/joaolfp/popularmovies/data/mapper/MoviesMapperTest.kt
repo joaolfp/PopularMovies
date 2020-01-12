@@ -6,7 +6,10 @@ import org.junit.Before
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.junit.runners.JUnit4
 
+@RunWith(JUnit4::class)
 class MoviesMapperTest {
 
     companion object {
@@ -29,7 +32,7 @@ class MoviesMapperTest {
     }
 
     @Test
-    fun `get movie path when mapper should have correct`() {
+    fun `get movie poster when mapper should have correct`() {
         assertEquals("\\/yJdeWaVXa2se9agI6B4mQunVYkB.jpg", result.poster_path)
     }
 }
