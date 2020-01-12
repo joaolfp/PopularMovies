@@ -15,6 +15,6 @@ In this android app shows the popular movies by getting info from the The Movie 
 <b>Dependency Injection</b> - Kodein <br>
 <b>Networking</b> - Retrofit, Okhttp, Gson <br>
 <b>Unit Test</b> - JUnit4, MockK <br>
-<b>Linters</b> - Ktlint 
+<b>Linters</b> - Ktlint, Code Climate, Codebeate and Codacy
 
 <img src="https://github.com/joaolfp/PopularMovies/blob/master/.github/home.png" height="600px">
