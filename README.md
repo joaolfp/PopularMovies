@@ -11,3 +11,5 @@ In this android app shows the popular movies by getting info from the The Movie 
 <b>Networking</b> - Retrofit, Okhttp, Gson <br>
 <b>Unit Test</b> - JUnit4, MockK <br>
 <b>Linters</b> - Ktlint 
+
+<img src="https://github.com/joaolfp/PopularMovies/blob/master/.github/home.png">
