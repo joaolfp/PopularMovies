@@ -1,5 +1,6 @@
 package com.joaolfp.popularmovies.data.repository
 
+import com.joaolfp.popularmovies.BuildConfig
 import com.joaolfp.popularmovies.data.MoviesApi
 import com.joaolfp.popularmovies.data.mapper.MoviesMapper
 import com.joaolfp.popularmovies.data.model.ResultDTO
@@ -26,7 +27,7 @@ class MoviesRepositoryImplTest {
 
     @Test
     fun `when success should appear no errors`() {
-        every { api.getMovies("ec33a5ee87834b72e09e9aaf60d4c9fc") } returns Observable.just(
+        every { api.getMovies(BuildConfig.API_KEY) } returns Observable.just(
             ResultDTO(listOf())
         )
 
